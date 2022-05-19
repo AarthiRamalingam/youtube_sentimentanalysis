@@ -1,0 +1,37 @@
+<!--https://github.com/prakhar33/Sentiment-Analysis-Using-Flasks-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Result</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"> 
+    
+</head>
+<body class="maincon">
+
+	<header>
+		<div class="jumbotron text-center">
+		<h1>Youtube Comment Setiment Aalysis</h1>
+		<p class="text-muted font-weight-bold">Machine Learning Web Application </p>
+		</div>
+	</header>
+
+	<div class="container p-3 my-3 text-white" >
+		<div class="row">
+			<p class="text-white font-weight-bold">Your Comment is Classified as :</p>
+			<br><br>
+			{% if pred==2 %}
+			<p class=" text-center font-weight-bold text-white" >Review is Positive</p>
+			{% elif pred==1 %}
+			<p class=" text-center font-weight-bold text-white" >Review is Negative</p>
+            {%else %}
+            <p class=" text-center font-weight-bold text-white" >Review is Neutral</p>
+			{% endif %}
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
